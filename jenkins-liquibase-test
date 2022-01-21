@@ -1,0 +1,9 @@
+node {
+   stage('Checkout') {
+      git url: 'https://github.com/rajan-voradev/liquibase-test.git', branch: 'master'
+   }
+
+   stage('Update') {
+      liquibaseUpdate changeLogFile: 'example-changelog.xml', url: 'jdbc:oracle:thin:@localhost:1521/pdreploc', credentialsId: 'oracle', databaseEngine: 'oracle'
+   }
+}
