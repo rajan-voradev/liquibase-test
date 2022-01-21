@@ -1,0 +1,586 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="rajan.vora (generated)" id="1642688631443-1">
+        <createTable tableName="ERSSEC">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSEC"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(8 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSEC"/>
+            </column>
+            <column name="EXHIBIT_DISPOSITION" type="CHAR(1 BYTE)"/>
+            <column name="ACTION" type="CHAR(2 BYTE)"/>
+            <column name="PQDR_RECOMMENDATION" type="VARCHAR2(2 BYTE)"/>
+            <column name="PACKAGING_CONDITION" type="VARCHAR2(2 BYTE)"/>
+            <column name="PACKAGING_CONDITION_NARR" type="VARCHAR2(1000 BYTE)"/>
+            <column name="LABEL_MARKINGS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="MATERIAL_MARKINGS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="ORIGINATOR_MISC_NOTES" type="VARCHAR2(1000 BYTE)"/>
+            <column name="ACTION_POINT_MISC_NOTES" type="VARCHAR2(1000 BYTE)"/>
+            <column name="SCREENING_POINT_MISC_NOTES" type="VARCHAR2(4000 BYTE)"/>
+            <column name="NAVY_AND_END_USER_STOCK" type="VARCHAR2(1000 BYTE)"/>
+            <column name="EFFECTS_INSTALLED_MATERIAL" type="VARCHAR2(1000 BYTE)"/>
+            <column name="TECH_ORDERING_DATA" type="VARCHAR2(1000 BYTE)"/>
+            <column name="GOVT_SOURCE_INSP" type="VARCHAR2(1000 BYTE)"/>
+            <column name="SUGGESTED_CORRECTIVE_ACTION" type="VARCHAR2(1000 BYTE)"/>
+            <column name="END_SERVICE_USE" type="VARCHAR2(1000 BYTE)"/>
+            <column name="SCREENING_POINT_RESOLUTION" type="VARCHAR2(1000 BYTE)"/>
+            <column name="PQDR_RECO_JUSTIFICATION" type="VARCHAR2(1000 BYTE)"/>
+            <column name="HISTORICAL_DATA" type="VARCHAR2(4000 BYTE)"/>
+            <column name="DO_NOT_FORWARD_TO_ACTION_POINT" type="CHAR(1 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-2">
+        <createTable tableName="ERSSECCTR">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECCTR"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(8 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECCTR"/>
+            </column>
+            <column name="CONTRACT_NUMBER" type="VARCHAR2(17 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECCTR"/>
+            </column>
+            <column name="TDP_IRPOD_REVISION" type="VARCHAR2(20 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-3">
+        <createTable tableName="SAMSECSAD">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECSAD"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECSAD"/>
+            </column>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECSAD"/>
+            </column>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECSAD"/>
+            </column>
+            <column name="CONDITION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+            <column name="RESOLUTION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-4">
+        <createTable tableName="RIBSEC">
+            <column name="RIB_SERIAL_NUMBER" type="VARCHAR2(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIBSEC"/>
+            </column>
+            <column name="RIB_REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIBSEC"/>
+            </column>
+            <column name="SUBJECT_TEXT" type="VARCHAR2(40 BYTE)"/>
+            <column name="SCOPE_TEXT" type="VARCHAR2(40 BYTE)"/>
+            <column name="BACKGROUND_TEXT" type="VARCHAR2(1000 BYTE)"/>
+            <column name="INSPECTION_ACTIONS_TEXT" type="VARCHAR2(1000 BYTE)"/>
+            <column name="REMARKS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="REF_AUTHORITY" type="VARCHAR2(200 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-5">
+        <createTable tableName="ERSSECATTR">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECATTR"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(8 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECATTR"/>
+            </column>
+            <column name="DEF_ATTRIBUTE" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECATTR"/>
+            </column>
+            <column name="QUANTITY_DEF" type="NUMBER(6, 0)"/>
+            <column name="DESCRIPTION_OF_DEFICIENCY" type="VARCHAR2(3000 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BASIS_FOR_REJECT" type="VARCHAR2(3000 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DEFECT_VALID" type="VARCHAR2(2 BYTE)"/>
+            <column name="INVALID_JUSTIFICATION" type="VARCHAR2(3000 BYTE)"/>
+            <column name="TECHNICALLY_ACCEPTABLE" type="VARCHAR2(2 BYTE)"/>
+            <column name="MINOR_REPAIR" type="VARCHAR2(3000 BYTE)"/>
+            <column name="TECH_RECEIPT_INSP_ADEQUATE" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_TECH_INSP_REVS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="VENDOR_DCMA_ACTION" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_ACTIONS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="DCMA_INSP_ADEQUATE" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_DCMA_REVS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="TECH_ORDERING_DATA_ADEQUATE" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_TECH_ORDER_REVS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="STOCK_SCREENING_RECOMMENDED" type="VARCHAR2(2 BYTE)"/>
+            <column name="SCREENING_JUSTIFICATION" type="VARCHAR2(3000 BYTE)"/>
+            <column name="INSTALLED_MATERIAL" type="VARCHAR2(2 BYTE)"/>
+            <column name="INSTALLED_MATERIAL_ACTIONS" type="VARCHAR2(2 BYTE)"/>
+            <column name="INSTALLED_MATERIAL_ACTION_NARR" type="VARCHAR2(3000 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-6">
+        <createTable tableName="RIBSECATTR">
+            <column name="RIB_SERIAL_NUMBER" type="VARCHAR2(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIBSECATTR"/>
+            </column>
+            <column name="RIB_REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIBSECATTR"/>
+            </column>
+            <column name="INSPECTION_ATTRIBUTE" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIBSECATTR"/>
+            </column>
+            <column name="INSPECTION_ATTRIBUTE_DISC" type="VARCHAR2(200 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-7">
+        <createTable tableName="RIMS_SEC_REMARKS">
+            <column name="REPORTING_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_REMARKS"/>
+            </column>
+            <column name="SERIAL_NUMBER" type="VARCHAR2(9 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_REMARKS"/>
+            </column>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_REMARKS"/>
+            </column>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_REMARKS"/>
+            </column>
+            <column name="REMARKS" type="VARCHAR2(1000 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REMARKS_IND" type="CHAR(1 BYTE)"/>
+            <column name="REMARKS_SIGNED_BY" type="VARCHAR2(12 BYTE)"/>
+            <column name="REMARKS_DATE" type="date"/>
+            <column name="REMARKS_SIGNATURE" type="VARCHAR2(75 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-8">
+        <createTable tableName="RIMS_SEC_RIDL">
+            <column name="REPORTING_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_RIDL"/>
+            </column>
+            <column name="SERIAL_NUMBER" type="VARCHAR2(9 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_RIDL"/>
+            </column>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_RIDL"/>
+            </column>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_RIMS_SEC_RIDL"/>
+            </column>
+            <column name="CONDITION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+            <column name="RESOLUTION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+            <column name="METRIC_REMARKS" type="VARCHAR2(1000 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-9">
+        <createTable tableName="SAMSECREM">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECREM"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(6 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECREM"/>
+            </column>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECREM"/>
+            </column>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SAMSECREM"/>
+            </column>
+            <column name="REMARKS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="REMARKS_IND" type="CHAR(1 BYTE)"/>
+            <column name="REMARKS_SIGNED_BY" type="VARCHAR2(12 BYTE)"/>
+            <column name="REMARKS_DATE" type="date"/>
+            <column name="REMARKS_SIGNATURE" type="VARCHAR2(75 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-10">
+        <createView fullDefinition="true" viewName="RIMS_SECRIDL_SEARCHDETAIL_VIEW">CREATE OR REPLACE FORCE VIEW "RIMS_SECRIDL_SEARCHDETAIL_VIEW" ("REPORTING_ACTIVITY", "SERIAL_NUMBER", "REVISION_NUMBER", "LOW_SERIAL_NUMBER", "MATERIAL_LEVEL_CODE", "ITEM_NUMBER", "CONDITION_TEXT", "RESOLUTION_TEXT", "NSN_FSC", "NSN_NIIN", "FSC_MATERIAL_DESCRIPTION", "DRAWING_NUMBER", "RIDL_ID", "RIDL_TYPE", "METRIC1", "METRIC2", "INSPECTION_ATTRIBUTE", "INSPECTION_ATTRIBUTE_LITERAL", "PREENGINEERED_IND", "CATEGORY") AS SELECT
+   rims_mir.reporting_activity,
+   rims_mir.serial_number,
+   rims_mir.revision_number,
+   rims_mir.low_serial_number,
+   rims_mir.material_level_code,
+   rims_ridl.item_number,
+   rims_sec_ridl.condition_text,
+   rims_sec_ridl.resolution_text,
+   rims_mir.nsn_fsc,
+   rims_mir.nsn_niin,
+   rims_mir.fsc_material_description,
+   rims_mir.drawing_number,
+   rims_ridl.ridl_id,
+   rims_ridl.ridl_type,
+   rims_ridl.metric1,
+   rims_ridl.metric2,
+   rims_ridl.inspection_attribute,
+   mir_inspection_attribute.literal inspection_attribute_literal,
+   rims_ridl.preengineered_ind,
+   rims_ridl.category
+FROM rims_mir, rims_ridl, rims_sec_ridl, mir_inspection_attribute
+WHERE rims_mir.reporting_activity = rims_ridl.reporting_activity
+AND rims_mir.serial_number = rims_ridl.serial_number
+AND rims_mir.revision_number = rims_ridl.revision_number
+AND rims_mir.material_level_code IN (4, 5, 7, 9, 10)
+AND rims_ridl.reporting_activity = rims_sec_ridl.reporting_activity
+AND rims_ridl.serial_number = rims_sec_ridl.serial_number
+AND rims_ridl.revision_number = rims_sec_ridl.revision_number
+AND rims_ridl.item_number = rims_sec_ridl.item_number
+AND rims_ridl.inspection_attribute = mir_inspection_attribute.code(+)</createView>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-11">
+        <createSequence cycle="true" maxValue="9999999999999999999999999999" ordered="true" sequenceName="ERSSECREM_SEQ" startValue="141"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-12">
+        <createSequence maxValue="9999999999999999999999999999" sequenceName="SECATTACHMENTS_ID" startValue="1441"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-13">
+        <createTable tableName="ERSSECATTR_ARCHIVE">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(8 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DEF_ATTRIBUTE" type="NUMBER(2, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="QUANTITY_DEF" type="NUMBER(6, 0)"/>
+            <column name="DESCRIPTION_OF_DEFICIENCY" type="VARCHAR2(3000 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BASIS_FOR_REJECT" type="VARCHAR2(3000 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DEFECT_VALID" type="VARCHAR2(2 BYTE)"/>
+            <column name="INVALID_JUSTIFICATION" type="VARCHAR2(3000 BYTE)"/>
+            <column name="TECHNICALLY_ACCEPTABLE" type="VARCHAR2(2 BYTE)"/>
+            <column name="MINOR_REPAIR" type="VARCHAR2(3000 BYTE)"/>
+            <column name="TECH_RECEIPT_INSP_ADEQUATE" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_TECH_INSP_REVS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="VENDOR_DCMA_ACTION" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_ACTIONS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="DCMA_INSP_ADEQUATE" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_DCMA_REVS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="TECH_ORDERING_DATA_ADEQUATE" type="VARCHAR2(2 BYTE)"/>
+            <column name="RECOMMENDED_TECH_ORDER_REVS" type="VARCHAR2(3000 BYTE)"/>
+            <column name="STOCK_SCREENING_RECOMMENDED" type="VARCHAR2(2 BYTE)"/>
+            <column name="SCREENING_JUSTIFICATION" type="VARCHAR2(3000 BYTE)"/>
+            <column name="INSTALLED_MATERIAL" type="VARCHAR2(2 BYTE)"/>
+            <column name="INSTALLED_MATERIAL_ACTIONS" type="VARCHAR2(2 BYTE)"/>
+            <column name="INSTALLED_MATERIAL_ACTION_NARR" type="VARCHAR2(3000 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-14">
+        <createTable tableName="ERSSECCTR_ARCHIVE">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(8 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CONTRACT_NUMBER" type="VARCHAR2(17 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TDP_IRPOD_REVISION" type="VARCHAR2(20 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-15">
+        <createTable tableName="ERSSECREMARKS">
+            <column name="REMARK_ID" type="NUMBER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECREMARKS"/>
+            </column>
+            <column name="RECORD_TYPE" type="VARCHAR2(5 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECREMARKS"/>
+            </column>
+            <column name="KEY_INFO" type="VARCHAR2(25 BYTE)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ERSSECREMARKS"/>
+            </column>
+            <column name="REMARK_NARR" type="VARCHAR2(1000 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATE_POINT" type="NUMBER"/>
+            <column name="UPDATE_DATE" type="date"/>
+            <column name="SIGNED_BY" type="VARCHAR2(12 BYTE)"/>
+            <column name="SIGNED_DATE" type="date"/>
+            <column name="USER_SIGNATURE" type="VARCHAR2(75 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-16">
+        <createTable tableName="ERSSEC_ARCHIVE">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RCN_NUMBER" type="CHAR(8 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXHIBIT_DISPOSITION" type="CHAR(1 BYTE)"/>
+            <column name="ACTION" type="CHAR(2 BYTE)"/>
+            <column name="PQDR_RECOMMENDATION" type="VARCHAR2(2 BYTE)"/>
+            <column name="PACKAGING_CONDITION" type="VARCHAR2(2 BYTE)"/>
+            <column name="PACKAGING_CONDITION_NARR" type="VARCHAR2(1000 BYTE)"/>
+            <column name="LABEL_MARKINGS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="MATERIAL_MARKINGS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="ORIGINATOR_MISC_NOTES" type="VARCHAR2(1000 BYTE)"/>
+            <column name="ACTION_POINT_MISC_NOTES" type="VARCHAR2(1000 BYTE)"/>
+            <column name="SCREENING_POINT_MISC_NOTES" type="VARCHAR2(4000 BYTE)"/>
+            <column name="NAVY_AND_END_USER_STOCK" type="VARCHAR2(1000 BYTE)"/>
+            <column name="EFFECTS_INSTALLED_MATERIAL" type="VARCHAR2(1000 BYTE)"/>
+            <column name="TECH_ORDERING_DATA" type="VARCHAR2(1000 BYTE)"/>
+            <column name="GOVT_SOURCE_INSP" type="VARCHAR2(1000 BYTE)"/>
+            <column name="SUGGESTED_CORRECTIVE_ACTION" type="VARCHAR2(1000 BYTE)"/>
+            <column name="END_SERVICE_USE" type="VARCHAR2(1000 BYTE)"/>
+            <column name="SCREENING_POINT_RESOLUTION" type="VARCHAR2(1000 BYTE)"/>
+            <column name="PQDR_RECO_JUSTIFICATION" type="VARCHAR2(1000 BYTE)"/>
+            <column name="HISTORICAL_DATA" type="VARCHAR2(4000 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+            <column name="DO_NOT_FORWARD_TO_ACTION_POINT" type="CHAR(1 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-17">
+        <createTable tableName="RIBSECATTR_ARCHIVE">
+            <column name="RIB_SERIAL_NUMBER" type="VARCHAR2(6 BYTE)"/>
+            <column name="RIB_REVISION_NUMBER" type="NUMBER(2, 0)"/>
+            <column name="INSPECTION_ATTRIBUTE" type="NUMBER(2, 0)"/>
+            <column name="INSPECTION_ATTRIBUTE_DISC" type="VARCHAR2(200 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-18">
+        <createTable tableName="RIBSEC_ARCHIVE">
+            <column name="RIB_SERIAL_NUMBER" type="VARCHAR2(6 BYTE)"/>
+            <column name="RIB_REVISION_NUMBER" type="NUMBER(2, 0)"/>
+            <column name="SUBJECT_TEXT" type="VARCHAR2(40 BYTE)"/>
+            <column name="SCOPE_TEXT" type="VARCHAR2(40 BYTE)"/>
+            <column name="BACKGROUND_TEXT" type="VARCHAR2(1000 BYTE)"/>
+            <column name="INSPECTION_ACTIONS_TEXT" type="VARCHAR2(1000 BYTE)"/>
+            <column name="REMARKS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="REF_AUTHORITY" type="VARCHAR2(200 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-19">
+        <createTable tableName="RIMS_SEC_REMARKS_ARCHIVE">
+            <column name="REPORTING_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SERIAL_NUMBER" type="VARCHAR2(9 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REMARKS" type="VARCHAR2(1000 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REMARKS_IND" type="CHAR(1 BYTE)"/>
+            <column name="REMARKS_SIGNED_BY" type="VARCHAR2(12 BYTE)"/>
+            <column name="REMARKS_DATE" type="date"/>
+            <column name="REMARKS_SIGNATURE" type="VARCHAR2(75 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-20">
+        <createTable tableName="RIMS_SEC_RIDL_ARCHIVE">
+            <column name="REPORTING_ACTIVITY" type="CHAR(6 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SERIAL_NUMBER" type="VARCHAR2(9 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CONDITION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+            <column name="RESOLUTION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+            <column name="METRIC_REMARKS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-21">
+        <createTable tableName="SAMSECREM_ARCHIVE">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)"/>
+            <column name="RCN_NUMBER" type="CHAR(6 BYTE)"/>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)"/>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)"/>
+            <column name="REMARKS" type="VARCHAR2(1000 BYTE)"/>
+            <column name="REMARKS_IND" type="CHAR(1 BYTE)"/>
+            <column name="REMARKS_SIGNED_BY" type="VARCHAR2(12 BYTE)"/>
+            <column name="REMARKS_DATE" type="date"/>
+            <column name="REMARKS_SIGNATURE" type="VARCHAR2(75 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-22">
+        <createTable tableName="SAMSECSAD_ARCHIVE">
+            <column name="RCN_ACTIVITY" type="CHAR(6 BYTE)"/>
+            <column name="RCN_NUMBER" type="CHAR(6 BYTE)"/>
+            <column name="REVISION_NUMBER" type="NUMBER(2, 0)"/>
+            <column name="ITEM_NUMBER" type="NUMBER(2, 0)"/>
+            <column name="CONDITION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+            <column name="RESOLUTION_TEXT" type="VARCHAR2(4000 BYTE)"/>
+            <column name="ARCHIVE_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DELETE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-23">
+        <createTable tableName="SECAPPS_ATTACHMENTS">
+            <column name="ATTACHMENT_ID" type="NUMBER(7, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SECAPPS_ATTACHMENTS"/>
+            </column>
+            <column name="RECORD_TYPE" type="CHAR(5 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="KEY_INFO" type="VARCHAR2(25 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MIME_TYPE" type="VARCHAR2(100 BYTE)"/>
+            <column name="FILE_DESCRIPTION" type="VARCHAR2(500 BYTE)"/>
+            <column name="FILE_COMMENTS" type="VARCHAR2(500 BYTE)"/>
+            <column name="FILE_NAME" type="VARCHAR2(100 BYTE)"/>
+            <column name="UPDATE_ACTIVITY" type="VARCHAR2(12 BYTE)"/>
+            <column name="ADDED_DATE" type="date"/>
+            <column name="UPDATE_DATE" type="date"/>
+            <column name="ATTACHMENT_DATA" type="BLOB"/>
+            <column name="GOVT_ACCESS_IND" type="CHAR(1 BYTE)"/>
+            <column name="CUI_CODE" type="NUMBER(3, 0)"/>
+            <column name="LDC_CODE" type="NUMBER(2, 0)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-24">
+        <createIndex indexName="I_ERSSECATTR_ARCHIVE" tableName="ERSSECATTR_ARCHIVE">
+            <column name="RCN_ACTIVITY"/>
+            <column name="RCN_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-25">
+        <createIndex indexName="I_ERSSECCTR_ARCHIVE" tableName="ERSSECCTR_ARCHIVE">
+            <column name="RCN_ACTIVITY"/>
+            <column name="RCN_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-26">
+        <createIndex indexName="I_ERSSEC_ARCHIVE" tableName="ERSSEC_ARCHIVE">
+            <column name="RCN_ACTIVITY"/>
+            <column name="RCN_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-27">
+        <createIndex indexName="I_RIBSECATTR_ARCHIVE" tableName="RIBSECATTR_ARCHIVE">
+            <column name="RIB_SERIAL_NUMBER"/>
+            <column name="RIB_REVISION_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-28">
+        <createIndex indexName="I_RIBSEC_ARCHIVE" tableName="RIBSEC_ARCHIVE">
+            <column name="RIB_SERIAL_NUMBER"/>
+            <column name="RIB_REVISION_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-29">
+        <createIndex indexName="I_RIMS_SEC_REMARKS_ARCHIVE" tableName="RIMS_SEC_REMARKS_ARCHIVE">
+            <column name="REPORTING_ACTIVITY"/>
+            <column name="SERIAL_NUMBER"/>
+            <column name="REVISION_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-30">
+        <createIndex indexName="I_RIMS_SEC_RIDL_ARCHIVE" tableName="RIMS_SEC_RIDL_ARCHIVE">
+            <column name="REPORTING_ACTIVITY"/>
+            <column name="SERIAL_NUMBER"/>
+            <column name="REVISION_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-31">
+        <createIndex indexName="I_SAMSECREM_ARCHIVE" tableName="SAMSECREM_ARCHIVE">
+            <column name="RCN_ACTIVITY"/>
+            <column name="RCN_NUMBER"/>
+            <column name="REVISION_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-32">
+        <createIndex indexName="I_SAMSECSAD_ARCHIVE" tableName="SAMSECSAD_ARCHIVE">
+            <column name="RCN_ACTIVITY"/>
+            <column name="RCN_NUMBER"/>
+            <column name="REVISION_NUMBER"/>
+            <column name="ARCHIVE_DATE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-33">
+        <createIndex indexName="I_SECAPPS_ATTACHMENTS_KEY" tableName="SECAPPS_ATTACHMENTS">
+            <column name="KEY_INFO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-34">
+        <addForeignKeyConstraint baseColumnNames="RCN_ACTIVITY,RCN_NUMBER" baseTableName="ERSSEC" constraintName="FK_ERSSEC" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RCN_ACTIVITY,RCN_NUMBER" referencedTableName="ERS" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-35">
+        <addForeignKeyConstraint baseColumnNames="RCN_ACTIVITY,RCN_NUMBER" baseTableName="ERSSECATTR" constraintName="FK_ERSSECATTR" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RCN_ACTIVITY,RCN_NUMBER" referencedTableCatalogName="SEC" referencedTableName="ERSSEC" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-36">
+        <addForeignKeyConstraint baseColumnNames="RCN_ACTIVITY,RCN_NUMBER,CONTRACT_NUMBER" baseTableName="ERSSECCTR" constraintName="FK_ERSSECCTR" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RCN_ACTIVITY,RCN_NUMBER,CONTRACT_NUMBER" referencedTableName="ERSCTR" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-37">
+        <addForeignKeyConstraint baseColumnNames="RIB_SERIAL_NUMBER,RIB_REVISION_NUMBER" baseTableName="RIBSEC" constraintName="FK_RIBSEC" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RIB_SERIAL_NUMBER,RIB_REVISION_NUMBER" referencedTableName="RIB" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-38">
+        <addForeignKeyConstraint baseColumnNames="RIB_SERIAL_NUMBER,RIB_REVISION_NUMBER" baseTableName="RIBSECATTR" constraintName="FK_RIBSECATTR" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RIB_SERIAL_NUMBER,RIB_REVISION_NUMBER" referencedTableCatalogName="SEC" referencedTableName="RIBSEC" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-39">
+        <addForeignKeyConstraint baseColumnNames="REPORTING_ACTIVITY,SERIAL_NUMBER,REVISION_NUMBER" baseTableName="RIMS_SEC_REMARKS" constraintName="FK_RIMS_SEC_REMARKS" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="REPORTING_ACTIVITY,KEY_SERIAL_NUMBER,REVISION_NUMBER" referencedTableName="RIMS_MAIN" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-40">
+        <addForeignKeyConstraint baseColumnNames="REPORTING_ACTIVITY,SERIAL_NUMBER,REVISION_NUMBER,ITEM_NUMBER" baseTableName="RIMS_SEC_RIDL" constraintName="FK_RIMS_SEC_RIDL" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="REPORTING_ACTIVITY,SERIAL_NUMBER,REVISION_NUMBER,ITEM_NUMBER" referencedTableName="RIMS_RIDL" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-41">
+        <addForeignKeyConstraint baseColumnNames="RCN_ACTIVITY,RCN_NUMBER,REVISION_NUMBER" baseTableName="SAMSECREM" constraintName="FK_SAMSECREM" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RCN_ACTIVITY,RCN_NUMBER,REVISION_NUMBER" referencedTableName="SAM" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-42">
+        <addForeignKeyConstraint baseColumnNames="RCN_ACTIVITY,RCN_NUMBER,REVISION_NUMBER,ITEM_NUMBER" baseTableName="SAMSECSAD" constraintName="FK_SAMSECSAD" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RCN_ACTIVITY,RCN_NUMBER,REVISION_NUMBER,ITEM_NUMBER" referencedTableName="SAMSAD" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-43">
+        <addForeignKeyConstraint baseColumnNames="CUI_CODE" baseTableName="SECAPPS_ATTACHMENTS" constraintName="FK_SECAPPS_ATTACHMENTS_CUI" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="CODE" referencedTableName="CUI" validate="true"/>
+    </changeSet>
+    <changeSet author="rajan.vora (generated)" id="1642688631443-44">
+        <addForeignKeyConstraint baseColumnNames="LDC_CODE" baseTableName="SECAPPS_ATTACHMENTS" constraintName="FK_SECAPPS_ATTACHMENTS_LDC" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="CODE" referencedTableName="LDC" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
